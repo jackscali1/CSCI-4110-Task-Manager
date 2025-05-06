@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assign Role</title>
+  <style>
+    body { font-family: Arial; background: #f2f2f2; padding: 20px; }
+    .container { background: white; padding: 20px; max-width: 400px; margin: auto; border-radius: 8px; }
+    select, button { width: 100%; padding: 10px; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Assign Role to Task</h2>
+    <select id="user">
+      <option value="Jack">Jack</option>
+      <option value="Cole">Cole</option>
+      <option value="Mohamed">Mohamed</option>
+    </select>
+    <select id="role">
+      <option value="Developer">Developer</option>
+      <option value="Reviewer">Reviewer</option>
+      <option value="Tester">Tester</option>
+    </select>
+    <button onclick="assignRole()">Assign</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    function assignRole() {
+      const user = document.getElementById('user').value;
+      const role = document.getElementById('role').value;
+      document.getElementById('result').textContent = `${user} assigned as ${role}.`;
+    }
+  </script>
+</body>
+</html>
