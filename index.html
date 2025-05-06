@@ -20,14 +20,16 @@
   </div>
   <script>
     function login() {
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
-      if (email === 'user@example.com' && password === 'password123') {
-        document.getElementById('status').textContent = 'Login successful!';
-      } else {
-        document.getElementById('status').textContent = 'Invalid credentials';
-      }
-    }
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+
+  if (email === 'user@example.com' && password === 'password123') {
+    // Redirect to dashboard after successful login
+    window.location.href = 'dashboard.html';
+  } else {
+    document.getElementById('status').textContent = 'Invalid credentials';
+  }
+}
   </script>
 </body>
 </html>
