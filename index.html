@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <style>
+    body { font-family: Arial; background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; height: 100vh; }
+    .login-box { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    input { display: block; width: 100%; padding: 10px; margin: 10px 0; }
+    button { padding: 10px 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer; width: 100%; }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>Login</h2>
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p id="status"></p>
+  </div>
+  <script>
+    function login() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      if (email === 'user@example.com' && password === 'password123') {
+        document.getElementById('status').textContent = 'Login successful!';
+      } else {
+        document.getElementById('status').textContent = 'Invalid credentials';
+      }
+    }
+  </script>
+</body>
+</html>
