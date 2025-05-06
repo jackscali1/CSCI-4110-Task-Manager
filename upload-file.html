@@ -1,0 +1,36 @@
+<!-- FILE: upload-file.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload File to Task</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background-color: #eef2f3; }
+    .container { background: #fff; padding: 20px; max-width: 500px; margin: auto; border-radius: 8px; }
+    input[type=file], button { width: 100%; margin-top: 15px; padding: 10px; }
+    #fileList { margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Attach File to Task</h2>
+    <input type="file" id="fileInput">
+    <button onclick="uploadFile()">Upload</button>
+    <div id="fileList"></div>
+  </div>
+
+  <script>
+    function uploadFile() {
+      const input = document.getElementById("fileInput");
+      if (!input.files.length) return alert("Please select a file.");
+
+      const file = input.files[0];
+      const fileDisplay = document.createElement("p");
+      fileDisplay.textContent = `✔️ ${file.name} (${file.type}) uploaded at ${new Date().toLocaleTimeString()}`;
+      document.getElementById("fileList").appendChild(fileDisplay);
+
+      input.value = "";
+    }
+  </script>
+</body>
+</html>

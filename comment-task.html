@@ -1,0 +1,36 @@
+<!-- FILE: comment-task.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Comment on Task</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background-color: #f9f9f9; }
+    #comments { border: 1px solid #ccc; padding: 10px; background: #fff; min-height: 100px; margin-bottom: 10px; }
+    textarea { width: 100%; padding: 10px; }
+    button { margin-top: 10px; padding: 10px; background: #4CAF50; color: white; border: none; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h2>Task: Design Landing Page</h2>
+  <div id="comments"></div>
+  <textarea id="commentInput" placeholder="Write a comment..."></textarea>
+  <button onclick="postComment()">Post Comment</button>
+
+  <script>
+    const commentsDiv = document.getElementById("comments");
+
+    function postComment() {
+      const input = document.getElementById("commentInput");
+      const text = input.value.trim();
+      if (!text) return alert("Comment cannot be empty.");
+
+      const comment = document.createElement("p");
+      comment.textContent = `${new Date().toLocaleTimeString()}: ${text}`;
+      commentsDiv.appendChild(comment);
+
+      input.value = "";
+    }
+  </script>
+</body>
+</html>

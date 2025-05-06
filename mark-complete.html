@@ -1,0 +1,29 @@
+<!-- FILE: mark-complete.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mark Task as Complete</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background-color: #f4f4f4; }
+    .box { background: white; padding: 20px; max-width: 400px; margin: auto; border-radius: 6px; text-align: center; }
+    button { padding: 10px 20px; margin-top: 20px; background: #2196F3; color: white; border: none; cursor: pointer; }
+    #statusText { margin-top: 20px; color: green; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Task: Write Final Report</h2>
+    <p>Status: <span id="status">In Progress</span></p>
+    <button onclick="markComplete()">Mark as Complete</button>
+    <div id="statusText"></div>
+  </div>
+
+  <script>
+    function markComplete() {
+      document.getElementById("status").textContent = "Completed";
+      document.getElementById("statusText").textContent = "✅ Task successfully marked as complete.";
+    }
+  </script>
+</body>
+</html>

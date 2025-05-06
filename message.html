@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task Message Thread</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background-color: #f9f9f9; }
+    #thread { border: 1px solid #ccc; padding: 10px; background: white; min-height: 100px; }
+    textarea { width: 100%; padding: 10px; margin-top: 10px; }
+    button { padding: 10px 15px; margin-top: 10px; background: #4CAF50; color: white; border: none; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h2>Task Thread</h2>
+  <div id="thread"></div>
+  <textarea id="messageInput" placeholder="Type your message..."></textarea>
+  <button onclick="sendMessage()">Send Message</button>
+
+  <script>
+    const threadDiv = document.getElementById('thread');
+
+    function sendMessage() {
+      const input = document.getElementById('messageInput');
+      const text = input.value.trim();
+      if (!text) return alert('Please enter a message.');
+
+      const msg = document.createElement('p');
+      msg.textContent = `${new Date().toLocaleTimeString()}: ${text}`;
+      threadDiv.appendChild(msg);
+
+      input.value = '';
+    }
+  </script>
+</body>
+</html>

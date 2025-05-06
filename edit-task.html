@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Task</title>
+  <style>
+    body { font-family: Arial; background-color: #eef2f3; padding: 20px; }
+    .form-container { background: white; padding: 20px; border-radius: 8px; max-width: 400px; margin: auto; }
+    input, textarea { width: 100%; padding: 10px; margin-bottom: 15px; }
+    button { background: #4CAF50; color: white; border: none; padding: 10px; width: 100%; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Edit Task</h2>
+    <input type="text" id="title" value="Fix login bug">
+    <textarea id="description">There is a bug in login page that needs to be resolved.</textarea>
+    <input type="date" id="dueDate" value="2025-04-23">
+    <button onclick="saveTask()">Save Changes</button>
+    <p id="status"></p>
+  </div>
+
+  <script>
+    function saveTask() {
+      const title = document.getElementById('title').value.trim();
+      const description = document.getElementById('description').value.trim();
+      const dueDate = document.getElementById('dueDate').value;
+      if (!title || !dueDate) return alert('Title and Due Date are required.');
+
+      document.getElementById('status').textContent = `Task "${title}" updated for ${dueDate}.`;
+    }
+  </script>
+</body>
+</html>
