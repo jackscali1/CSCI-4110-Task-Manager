@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Task</title>
+  <style>
+    body { font-family: Arial; background-color: #f8f8f8; padding: 20px; }
+    .form-container { background: white; padding: 20px; max-width: 400px; margin: auto; border-radius: 8px; }
+    input, textarea { width: 100%; padding: 10px; margin-bottom: 15px; }
+    button { background: #4CAF50; color: white; padding: 10px; border: none; width: 100%; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Create Task</h2>
+    <input type="text" id="title" placeholder="Task Title">
+    <textarea id="description" placeholder="Task Description"></textarea>
+    <input type="date" id="dueDate">
+    <button onclick="createTask()">Create Task</button>
+    <p id="output"></p>
+  </div>
+
+  <script>
+    function createTask() {
+      const title = document.getElementById('title').value;
+      const description = document.getElementById('description').value;
+      const dueDate = document.getElementById('dueDate').value;
+
+      if (!title || !dueDate) return alert('Please fill out all required fields.');
+
+      document.getElementById('output').textContent = `Task \"${title}\" created with due date ${dueDate}`;
+    }
+  </script>
+</body>
+</html>
